@@ -32,7 +32,7 @@ class Router
         if ( $fn ) {
             call_user_func($fn, $this);
         } else {
-            header('Location: /404');
+            echo "Página No Encontrada o Ruta no válida";
         }
     }
 
@@ -40,7 +40,7 @@ class Router
     {
         foreach ($datos as $key => $value) {
             $$key = $value; 
-        }
+        } 
 
         ob_start(); 
 
