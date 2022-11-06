@@ -19,24 +19,24 @@ class Router
 
     public function comprobarRutas()
     {
-        
-    
+
+
 
         $urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
-       
+
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
-            $urlActual = explode('?',$urlActual)[0];//para pasar variables por get en mvc
+            $urlActual = explode('?', $urlActual)[0]; //para pasar variables por get en mvc
             $fn = $this->getRoutes[$urlActual] ?? null;
         } else {
-            $urlActual = explode('?',$urlActual)[0];//para pasar variables cuando necesites un post
+            $urlActual = explode('?', $urlActual)[0]; //para pasar variables cuando necesites un post
             $fn = $this->postRoutes[$urlActual] ?? null;
         }
-        
 
 
-        if ( $fn ) {
+
+        if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {
@@ -53,10 +53,13 @@ class Router
         }
 
         ob_start(); // Almacenamiento en memoria durante un momento...
+        //Utiliza el layout de acuerdo a la url 
+        $url_actual = $_SERVER['PATH_INFO'] ?? '/';
 
-        // entonces incluimos la vista en el layout
-        include_once __DIR__ . "/views/$view.php";
-        $contenido = ob_get_clean(); // Limpia el Buffer
-        include_once __DIR__ . '/views/layout.php';
+        if (str_contains($url_actual, '/admin')) {
+            include_once __DIR__ . '/views/admin-layout.php';
+        } else {
+            include_once __DIR__ . '/views/layout.php';
+        }
     }
 }
