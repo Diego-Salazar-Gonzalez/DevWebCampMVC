@@ -115,7 +115,7 @@ include_once __DIR__ . '/conferencias.php';
         Precios para DevWebcamp
     </p>
 
-    <div data-aos="<?php aos_animacion(); ?>" class="boletos__grid">
+    <div class="boletos__grid">
         <div class="boleto boleto--presencial">
             <h4 class="boleto__logo">
                 &#60;DevwebCamp/>
