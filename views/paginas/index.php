@@ -115,22 +115,22 @@ include_once __DIR__ . '/conferencias.php';
         Precios para DevWebcamp
     </p>
 
-    <div class="boletos__grid">
-        <div data-aos="<?php aos_animacion(); ?>" class="boleto boleto--presencial">
+    <div data-aos="<?php aos_animacion(); ?>" class="boletos__grid">
+        <div class="boleto boleto--presencial">
             <h4 class="boleto__logo">
                 &#60;DevwebCamp/>
             </h4>
             <p class="boleto__plan">Presencial</p>
             <p class="boleto__precio">$199</p>
         </div>
-        <div data-aos="<?php aos_animacion(); ?>" class="boleto boleto--virtual">
+        <div  class="boleto boleto--virtual">
             <h4 class="boleto__logo">
                 &#60;DevwebCamp/>
             </h4>
             <p class="boleto__plan">Virtual</p>
             <p class="boleto__precio">$49</p>
         </div>
-        <div data-aos="<?php aos_animacion(); ?>" class="boleto boleto--gratis">
+        <div  class="boleto boleto--gratis">
             <h4 class="boleto__logo">
                 &#60;DevwebCamp/>
             </h4>
