@@ -174,11 +174,11 @@ class RegistroController
         }
         
         if($registro->paquete_id !== "1") { 
-            header('Location: /');
+            header('Location: /'); 
             return;
         }
 
-        if( isset($registro->regalo_id) && $registro->paquete_id === "1") {
+        if( !isset($registro->regalo_id) && $registro->paquete_id === "1") {
                 header('Location: /boleto?id=' . urlencode($registro->token));
                 return;
              }
